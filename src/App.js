@@ -5,6 +5,7 @@ import EffectCounter1 from './Components/EffectCounter1';
 import HookCounter from './Components/HookCounter';
 import HookCounter3 from './Components/HookCounter3';
 import HookCounter4 from './Components/HookCounter4';
+import HookMouse from './Components/HookMouse';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <HookCounter3></HookCounter3>
       <HookCounter4></HookCounter4>
       <EffectCounter1></EffectCounter1>
+      <HookMouse></HookMouse>
     </div>
   );
 }

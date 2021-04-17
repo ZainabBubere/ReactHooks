@@ -15,40 +15,41 @@ import CounterOne from './Components/ReducerHooks/CounterOne';
 import CounterTwo from './Components/ReducerHooks/CounterTwo';
 import MultipleReducer from './Components/ReducerHooks/MultipleReducer';
 import ComponentOne from './Components/ReducerWithContext/ComponentOne';
+import DFuseEffect from './Components/DataFetch/DFuseEffect';
 
 export const UserContext = React.createContext()
 export const AddressContext = React.createContext()
 
 export const CountContext = React.createContext()
 
-const initialState = 0
-const reducer = (currentState, action) => {
-    switch(action){
-        case 'increment':
-            return currentState + 1
-        case 'decrement':
-            return currentState - 1
-        case 'reset':
-            return initialState
-        default :
-        return currentState
-    }
+// const initialState = 0
+// const reducer = (currentState, action) => {
+//     switch(action){
+//         case 'increment':
+//             return currentState + 1
+//         case 'decrement':
+//             return currentState - 1
+//         case 'reset':
+//             return initialState
+//         default :
+//         return currentState
+//     }
 
-}
+// }
 
 function App() {
-  const [newState, dispatch] = useReducer(reducer,initialState)
+  // const [newState, dispatch] = useReducer(reducer,initialState)
 
   return (
     <div>
       <h1>Hooks App</h1>
-      <CountContext.Provider 
+      {/* <CountContext.Provider 
       value = {{countState : newState, countDispatch : dispatch}}>
         <div>
           Count - {newState}
           <ComponentOne></ComponentOne>
         </div>
-      </CountContext.Provider>
+      </CountContext.Provider> */}
       {/* <Counter></Counter> */}
       {/* <HookCounter></HookCounter> */}
       {/* <HookCounter3></HookCounter3> */}
@@ -66,6 +67,7 @@ function App() {
       {/* <CounterOne></CounterOne> */}
       {/* <CounterTwo></CounterTwo> */}
       {/* <MultipleReducer></MultipleReducer> */}
+      <DFuseEffect></DFuseEffect>
 
     </div>
   );

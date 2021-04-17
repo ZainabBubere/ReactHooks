@@ -2,9 +2,11 @@ import React from 'react'
 import {UserContext, AddressContext} from '../../App'
 
 function ComponentC() {
+    
     return (
         <div>
-            <UserContext.Consumer>
+        {/* Done using UseContext API */}
+            {/* <UserContext.Consumer>
                 {
                     user => {
                         return (
@@ -23,7 +25,7 @@ function ComponentC() {
                     }
                 }
                 
-            </UserContext.Consumer>
+            </UserContext.Consumer> */}
         </div>
     )
 }

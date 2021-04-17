@@ -3,7 +3,7 @@ import ComponentC from './ComponentC'
 import {UserContext, AddressContext} from '../../App'
 
 function ComponentB() {
-
+    // Done using useContext Hook
     const user = useContext(UserContext)
     const address = useContext(AddressContext)
     return (

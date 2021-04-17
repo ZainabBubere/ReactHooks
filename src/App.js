@@ -10,15 +10,45 @@ import HookMouse from './Components/EffectHooks/HookMouse';
 import IntervalHookCounter from './Components/EffectHooks/IntervalHookCounter';
 import MouseContainer from './Components/EffectHooks/MouseContainer';
 import ComponentA from './Components/ContextHooks/ComponentA';
-import React from 'react';
+import React, {useReducer} from 'react';
+import CounterOne from './Components/ReducerHooks/CounterOne';
+import CounterTwo from './Components/ReducerHooks/CounterTwo';
+import MultipleReducer from './Components/ReducerHooks/MultipleReducer';
+import ComponentOne from './Components/ReducerWithContext/ComponentOne';
 
 export const UserContext = React.createContext()
 export const AddressContext = React.createContext()
 
+export const CountContext = React.createContext()
+
+const initialState = 0
+const reducer = (currentState, action) => {
+    switch(action){
+        case 'increment':
+            return currentState + 1
+        case 'decrement':
+            return currentState - 1
+        case 'reset':
+            return initialState
+        default :
+        return currentState
+    }
+
+}
+
 function App() {
+  const [newState, dispatch] = useReducer(reducer,initialState)
+
   return (
     <div>
       <h1>Hooks App</h1>
+      <CountContext.Provider 
+      value = {{countState : newState, countDispatch : dispatch}}>
+        <div>
+          Count - {newState}
+          <ComponentOne></ComponentOne>
+        </div>
+      </CountContext.Provider>
       {/* <Counter></Counter> */}
       {/* <HookCounter></HookCounter> */}
       {/* <HookCounter3></HookCounter3> */}
@@ -28,12 +58,15 @@ function App() {
       {/* <MouseContainer></MouseContainer> */}
       {/* <IntervalHookCounter></IntervalHookCounter> */}
       {/* <DataFetching></DataFetching> */}
-      <UserContext.Provider value={'Sherlock Holmes'}>
+      {/* <UserContext.Provider value={'Sherlock Holmes'}>
         <AddressContext.Provider value={'221 B, Baker Street'}>
         <ComponentA></ComponentA>
         </AddressContext.Provider>
-      </UserContext.Provider>
-      
+      </UserContext.Provider> */}
+      {/* <CounterOne></CounterOne> */}
+      {/* <CounterTwo></CounterTwo> */}
+      {/* <MultipleReducer></MultipleReducer> */}
+
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios'
 
-function DFuseEffect() {
+function DFuseState() {
     const [loading,setLoading] = useState(true)
     const [error, setError] = useState('')
     const [post, setPost] = useState({})
@@ -27,4 +27,4 @@ function DFuseEffect() {
     )
 }
 
-export default DFuseEffect
+export default DFuseState

@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
 import Counter from './Components/StateHooks/Counter'
-import DataFetching from './Components/EffectHooks/DataFetching';
+import DataFetching from './Components/DataFetch/DataFetching';
 import EffectCounter1 from './Components/EffectHooks/EffectCounter1';
 import HookCounter from './Components/StateHooks/HookCounter';
 import HookCounter3 from './Components/StateHooks/HookCounter3';
@@ -15,7 +15,9 @@ import CounterOne from './Components/ReducerHooks/CounterOne';
 import CounterTwo from './Components/ReducerHooks/CounterTwo';
 import MultipleReducer from './Components/ReducerHooks/MultipleReducer';
 import ComponentOne from './Components/ReducerWithContext/ComponentOne';
-import DFuseEffect from './Components/DataFetch/DFuseEffect';
+import DFuseEffect from './Components/DataFetch/DFuseState';
+import DFuseState from './Components/DataFetch/DFuseState';
+import DFuseReducer from './Components/DataFetch/DFuseReducer';
 
 export const UserContext = React.createContext()
 export const AddressContext = React.createContext()
@@ -67,7 +69,8 @@ function App() {
       {/* <CounterOne></CounterOne> */}
       {/* <CounterTwo></CounterTwo> */}
       {/* <MultipleReducer></MultipleReducer> */}
-      <DFuseEffect></DFuseEffect>
+      {/* <DFuseState></DFuseState> */}
+      <DFuseReducer></DFuseReducer>
 
     </div>
   );
